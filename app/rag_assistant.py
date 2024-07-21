@@ -31,7 +31,7 @@ class RAGAssistant:
         relative_path = os.path.relpath(absolute_path, current_directory)
         # default_documents_directory = r"D:\RAG-based-Personal-AI-Assistant\app\data\dummy.txt"
         self.initialize_retriever(relative_path)
-        self.llm = ChatOpenAI(model="gpt-4-turbo-preview", temperature=0.2)
+        self.llm = ChatOpenAI(model="gpt-4o", temperature=0.7)
 
     def load_env_variables(self):
         """Loads environment variables from .env file."""
@@ -53,11 +53,11 @@ class RAGAssistant:
         loader = TextLoader(directory_path)
         documents = loader.load()
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=10000, chunk_overlap=200)
+            chunk_size=1000, chunk_overlap=200)
         docs = text_splitter.split_documents(documents)
         embeddings = OpenAIEmbeddings()
 
-        Pinecone(api_key=self.pinecone_api_key, environment='gcp-starter')
+        Pinecone(api_key=self.pinecone_api_key, environment='us-east-1-aws')
         vectbd = PineconeVectorStore.from_documents(
             docs, embeddings, index_name=self.pinecone_index_name)
         self.retriever = vectbd.as_retriever()
@@ -106,7 +106,7 @@ class RAGAssistant:
             chunk_size=10000, chunk_overlap=200)
         docs = text_splitter.split_documents(documents)
         embeddings = OpenAIEmbeddings()
-        Pinecone(api_key=self.pinecone_api_key, environment='gcp-starter')
+        Pinecone(api_key=self.pinecone_api_key, environment='us-east-1-aws')
         vectbd = PineconeVectorStore.from_documents(
             docs, embeddings, index_name=self.pinecone_index_name)
         self.retriever = vectbd.as_retriever()
