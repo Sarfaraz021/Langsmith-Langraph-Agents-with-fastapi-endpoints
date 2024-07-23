@@ -18,10 +18,10 @@
 
 ### (Optional)
 
-`pip install python-jose[cryptography]`
-`pip install motor`
-`pip install motor python-jose passlib`
-`pip install bcrypt`
+i. `pip install python-jose[cryptography]`
+ii. `pip install motor`
+iii. `pip install motor python-jose passlib`
+iv. `pip install bcrypt`
 
 ## To test api endpoints on Swagger UI:
 
