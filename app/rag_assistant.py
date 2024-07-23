@@ -15,6 +15,9 @@ from langchain_core.pydantic_v1 import BaseModel, Field
 from langchain_core.output_parsers import StrOutputParser
 from langgraph.graph import StateGraph, START, END
 from fastapi import HTTPException
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
+os.environ["LANGCHAIN_API_KEY"] = "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"
 
 
 class RouteQuery(BaseModel):
