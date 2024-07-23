@@ -15,7 +15,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from fastapi import HTTPException
 from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone
-from prompt import prompt_template
+from app.prompt import prompt_template
 
 
 class RAGAssistant:

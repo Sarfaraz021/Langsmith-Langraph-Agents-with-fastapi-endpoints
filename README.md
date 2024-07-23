@@ -1,33 +1,50 @@
-# Varun-AI-Rag-Agent
+first run this command on terminal-->: Set-ExecutionPolicy Unrestricted -Scope Process
+and then this one -->: .\.venv\Scripts\activate
 
-# Gerry-Law-Chatbot-Assistant
+And follow this for all other langauges.
 
-FirST Make a Virtual Enviroment in vs code with python-3.11.5
+python --version
 
-Then activate that venv with following commands-->:
--->Set-ExecutionPolicy Unrestricted -Scope Process
--->: .\.venv\Scripts\activate
+Dependencies:
 
-Once activated
-
-Install Dependencies:
-
+pip install langchain
 pip install pinecone-client
 pip install openpyxl
+pip install openai
+pip install python-dotenv
 pip install langchain_community
 pip install langchain-openai
-pip install langchain_pinecone
-pip install docx2txt
+pip install docx2txt #to read word documents
 pip install unstructured
 pip install "unstructured[docx]"
 pip install "unstructured[pdf]"
-pip install fpdf
-pip install PyPDF2
 
-pip install openai
-pip install python-dotenv
-langchain_google_community
+pip install requests
+pip install fastapi
+pip install uvicorn
+pip install --upgrade --quiet langchain-pinecone langchain-openai langchain
 
-pip install langchain
-pip install pypdf2
-pip install tiktoken
+->(Optional)
+pip install python-jose[cryptography]
+pip install motor
+pip install motor python-jose passlib
+pip install bcrypt
+
+Git Commands for version control:
+git add .
+git commit -m "define commit"
+git push origin 'branch name'
+git branch----> to check current branch
+
+To Run Server:
+uvicorn main:app --host 0.0.0.0 --port 5000 --reload
+
+---
+
+Fast app:
+
+To test end points on Swagger UI:
+
+1 - uvicorn app.main:app --reload
+---> Type the URL of your running FastAPI application followed by /docs. By default, the URL will be:
+http://127.0.0.1:8000/docs swagger UI
