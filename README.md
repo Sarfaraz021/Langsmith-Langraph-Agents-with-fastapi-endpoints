@@ -1,6 +1,6 @@
 ## Dependencies to install:
 
-1. `pip install langchain`
+1. `pip install langchain langchainhub langgraph`
 2. `pip install pinecone-client`
 3. `pip install openpyxl`
 4. `pip install openai`
@@ -31,4 +31,4 @@ uvicorn app.main:app --reload
 
 ##### Copy and paste this URL on browser, cause your app is runing bydefault on this port 8000:
 
-http://127.0.0.1:8000/docs swagger UI
+http://127.0.0.1:8000/docs - swagger UI
