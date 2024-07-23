@@ -1,11 +1,4 @@
-first run this command on terminal-->: Set-ExecutionPolicy Unrestricted -Scope Process
-and then this one -->: .\.venv\Scripts\activate
-
-And follow this for all other langauges.
-
-python --version
-
-Dependencies:
+Dependencies to install:
 
 pip install langchain
 pip install pinecone-client
@@ -35,11 +28,6 @@ git add .
 git commit -m "define commit"
 git push origin 'branch name'
 git branch----> to check current branch
-
-To Run Server:
-uvicorn main:app --host 0.0.0.0 --port 5000 --reload
-
----
 
 Fast app:
 
