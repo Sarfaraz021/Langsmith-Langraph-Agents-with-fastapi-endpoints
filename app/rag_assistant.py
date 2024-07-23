@@ -15,9 +15,6 @@ from langchain_core.pydantic_v1 import BaseModel, Field
 from langchain_core.output_parsers import StrOutputParser
 from langgraph.graph import StateGraph, START, END
 from fastapi import HTTPException
-os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
-os.environ["LANGCHAIN_API_KEY"] = "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"
 
 
 class RouteQuery(BaseModel):
@@ -46,6 +43,9 @@ class RAGAssistant:
         os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
         os.environ["PINECONE_API_KEY"] = os.getenv('PINECONE_API_KEY')
         self.pinecone_index_name = os.getenv("PINECONE_INDEX_NAME")
+        os.environ["LANGCHAIN_TRACING_V2"] = os.getenv("LANGCHAIN_TRACING_V2")
+        os.environ["LANGCHAIN_ENDPOINT"] = os.getenv("LANGCHAIN_ENDPOINT")
+        os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 
     def setup_components(self):
         self.embeddings = OpenAIEmbeddings()
