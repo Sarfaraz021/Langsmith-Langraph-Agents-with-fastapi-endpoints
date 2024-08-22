@@ -49,7 +49,7 @@ class RAGAssistant:
 
     def setup_components(self):
         self.embeddings = OpenAIEmbeddings()
-        self.llm = ChatOpenAI(model="gpt-4o", temperature=0.7)
+        self.llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
         self.structured_llm_router = self.llm.with_structured_output(
             RouteQuery)
 
